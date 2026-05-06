@@ -234,6 +234,62 @@ tr:hover td{background:rgba(245,244,240,0.02)}
 }
 .search-bar:focus{border-color:rgba(245,244,240,0.25)}
 
+/* CONTENT EDITOR */
+.content-section { margin-bottom: 32px; }
+.content-section-title {
+  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 16px 20px; background: var(--bg3); border: 1px solid var(--border);
+  border-bottom: none; display: flex; align-items: center; gap: 10px;
+}
+.content-section-title .sec-icon { font-size: 10px; opacity: 0.5; }
+.content-fields { border: 1px solid var(--border); }
+.content-field {
+  display: grid; grid-template-columns: 200px 1fr auto;
+  align-items: center; gap: 16px;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.content-field:last-child { border-bottom: none; }
+.content-field:hover { background: rgba(245,244,240,0.02); }
+.field-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+.field-input {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--white); padding: 9px 14px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300;
+  outline: none; transition: border-color 0.2s; width: 100%;
+}
+.field-input:focus { border-color: rgba(245,244,240,0.25); }
+.field-textarea {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--white); padding: 9px 14px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300;
+  outline: none; transition: border-color 0.2s; width: 100%;
+  resize: vertical; min-height: 70px;
+}
+.field-textarea:focus { border-color: rgba(245,244,240,0.25); }
+.img-preview-wrap { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.img-preview {
+  width: 80px; height: 56px; object-fit: cover;
+  border: 1px solid var(--border); background: var(--bg3);
+  display: block;
+}
+.img-upload-btn {
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; color: var(--gray); background: none;
+  border: 1px solid var(--border); padding: 5px 12px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; transition: all 0.2s;
+}
+.img-upload-btn:hover { color: var(--white); border-color: rgba(245,244,240,0.3); }
+.save-bar {
+  position: sticky; bottom: 0; background: rgba(6,6,6,0.95);
+  backdrop-filter: blur(20px); border-top: 1px solid var(--border);
+  padding: 16px 36px; display: flex; align-items: center; justify-content: space-between;
+  margin: 0 -36px;
+}
+.save-note { font-size: 12px; color: var(--gray); }
+.save-success { color: var(--green); font-size: 12px; display: none; }
+
 /* FIREBASE CONFIG NOTE */
 .config-notice{
   background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);
@@ -283,6 +339,9 @@ tr:hover td{background:rgba(245,244,240,0.02)}
     <div class="nav-item" onclick="goPage('messages',this)">
       <span class="nav-icon">◎</span> Mesajlar
       <span id="msgBadge" style="margin-left:auto;background:var(--white);color:var(--bg);font-size:9px;padding:2px 6px;font-weight:700;display:none"></span>
+    </div>
+    <div class="nav-item" onclick="goPage('content',this)">
+      <span class="nav-icon">✦</span> Site İçeriği
     </div>
     <div class="sidebar-bottom">
       <button class="logout-btn" onclick="doLogout()">⏻ &nbsp;Çıkış Yap</button>
@@ -385,6 +444,212 @@ tr:hover td{background:rgba(245,244,240,0.02)}
             <tbody id="blogTable"></tbody>
           </table>
         </div>
+      </div>
+
+      <!-- SITE CONTENT -->
+      <div class="page" id="page-content">
+        <div id="saveBar" class="save-bar">
+          <div>
+            <div class="save-note">Değişiklikler tarayıcıda kaydedilir. Siteye uygulamak için index.html'i güncellemeyi unutma.</div>
+            <div class="save-success" id="saveSuccess">✓ Kaydedildi!</div>
+          </div>
+          <button class="btn btn-white" onclick="saveContent()">Değişiklikleri Kaydet</button>
+        </div>
+
+        <!-- HERO -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">01</span> Hero Bölümü</div>
+          <div class="content-fields">
+            <div class="content-field">
+              <div class="field-label">Üst Etiket</div>
+              <input class="field-input" id="cf_heroEye" value="Modern Dijital Büyüme Ajansı — İzmir, TR">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Ana Başlık Satır 1</div>
+              <input class="field-input" id="cf_h1_1" value="Dijitalde">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Ana Başlık Satır 2 (soluk)</div>
+              <input class="field-input" id="cf_h1_2" value="Güçlü">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Ana Başlık Satır 3</div>
+              <input class="field-input" id="cf_h1_3" value="Görün.">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Açıklama</div>
+              <textarea class="field-textarea" id="cf_heroDesc">Sadece site yapmıyoruz. Markanın dijitaldeki tüm sistemini kuruyoruz.</textarea>
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Buton 1 Metni</div>
+              <input class="field-input" id="cf_cta1" value="Büyümeye Başla">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Buton 2 Metni</div>
+              <input class="field-input" id="cf_cta2" value="Hizmetleri Gör">
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">02</span> Hakkımızda Bölümü</div>
+          <div class="content-fields">
+            <div class="content-field">
+              <div class="field-label">Bölüm Etiketi</div>
+              <input class="field-input" id="cf_aboutTag" value="Hakkımızda">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Başlık Satır 1</div>
+              <input class="field-input" id="cf_aboutT1" value="Biz Kimiz?">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Başlık Satır 2 (soluk)</div>
+              <input class="field-input" id="cf_aboutT2" value="Ne Yapıyoruz?">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Paragraf 1</div>
+              <textarea class="field-textarea" id="cf_aboutP1">ZOA Agency, markaların dijital dünyada profesyonel, güvenilir ve satış odaklı bir kimlik kazanması için kurulmuş modern bir dijital büyüme ajansıdır.</textarea>
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Paragraf 2</div>
+              <textarea class="field-textarea" id="cf_aboutP2">Farklı kişilerle uğraşmak yerine, web sitesi, yazılım, e-ticaret, sosyal medya, reklam ve SEO süreçlerini tek çatı altında yönetiyoruz.</textarea>
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">İstatistik 1</div>
+              <input class="field-input" id="cf_stat1" value="8+">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">İstatistik 1 Etiket</div>
+              <input class="field-input" id="cf_stat1l" value="Hizmet Alanı">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">İstatistik 2</div>
+              <input class="field-input" id="cf_stat2" value="Tek">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">İstatistik 2 Etiket</div>
+              <input class="field-input" id="cf_stat2l" value="Çatı Altında Tam Dijital Çözüm">
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">03</span> Hizmetler (8 Kart)</div>
+          <div class="content-fields" id="servicesFields">
+          </div>
+        </div>
+
+        <!-- PROCESS -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">04</span> Çalışma Süreci</div>
+          <div class="content-fields" id="processFields">
+          </div>
+        </div>
+
+        <!-- WHY -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">05</span> Neden ZOA?</div>
+          <div class="content-fields" id="whyFields">
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">06</span> CTA Bölümü</div>
+          <div class="content-fields">
+            <div class="content-field">
+              <div class="field-label">Üst Etiket</div>
+              <input class="field-input" id="cf_ctaEye" value="Hadi Başlayalım">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Başlık Satır 1</div>
+              <input class="field-input" id="cf_ctaH1" value="Büyümeye">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Başlık Satır 2 (soluk)</div>
+              <input class="field-input" id="cf_ctaH2" value="Hazır">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Başlık Satır 3</div>
+              <input class="field-input" id="cf_ctaH3" value="Mısın?">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Buton Metni</div>
+              <input class="field-input" id="cf_ctaBtn" value="İletişime Geç">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">E-posta</div>
+              <input class="field-input" id="cf_ctaEmail" value="zoacollectioncompany@gmail.com">
+              <div></div>
+            </div>
+            <div class="content-field">
+              <div class="field-label">Instagram</div>
+              <input class="field-input" id="cf_ctaInsta" value="zoaxagency">
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGES -->
+        <div class="content-section rv">
+          <div class="content-section-title"><span class="sec-icon">07</span> Görseller & Logo</div>
+          <div class="content-fields">
+            <div class="content-field" style="grid-template-columns: 200px 1fr auto;">
+              <div class="field-label">Logo Metni</div>
+              <input class="field-input" id="cf_logoText" value="ZOA">
+              <div></div>
+            </div>
+            <div class="content-field" style="grid-template-columns: 200px 1fr auto; align-items:flex-start; padding-top:20px; padding-bottom:20px;">
+              <div class="field-label" style="padding-top:8px">OG / Kapak Görseli</div>
+              <div>
+                <input type="file" id="ogImageInput" accept="image/*" style="display:none" onchange="previewImg(this,'ogPreview','cf_ogUrl')">
+                <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                  <img id="ogPreview" class="img-preview" src="" onerror="this.style.display='none'" style="display:none">
+                  <div>
+                    <input class="field-input" id="cf_ogUrl" placeholder="Görsel URL'si (https://...)" style="margin-bottom:8px">
+                    <button class="img-upload-btn" onclick="document.getElementById('ogImageInput').click()">📁 Dosyadan Yükle</button>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
+            <div class="content-field" style="grid-template-columns: 200px 1fr auto;">
+              <div class="field-label">Site Başlığı (Tab)</div>
+              <input class="field-input" id="cf_siteTitle" value="ZOA Agency — Dijital Büyüme Ajansı">
+              <div></div>
+            </div>
+            <div class="content-field" style="grid-template-columns: 200px 1fr auto;">
+              <div class="field-label">Meta Açıklama</div>
+              <textarea class="field-textarea" id="cf_metaDesc" style="min-height:60px">ZOA Agency, web tasarımı, yazılım, e-ticaret ve dijital pazarlama hizmetleri sunan modern bir dijital büyüme ajansıdır.</textarea>
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:80px"></div>
       </div>
 
       <!-- MESSAGES -->
@@ -638,13 +903,14 @@ function initPanel() {
 // ═══════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════
-const pageTitles = {dashboard:'Dashboard',leads:'Lead Takibi',quotes:'Teklif Yönetimi',blog:'Blog / İçerik',messages:'Mesajlar'};
+const pageTitles = {dashboard:'Dashboard',leads:'Lead Takibi',quotes:'Teklif Yönetimi',blog:'Blog / İçerik',messages:'Mesajlar',content:'Site İçeriği'};
 function goPage(id, el) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   el.classList.add('active');
   document.getElementById('pageTitle').textContent = pageTitles[id];
+  if(id==='content') initContentPage();
 }
 
 // ═══════════════════════════════
@@ -959,6 +1225,178 @@ function deleteMsg(id) {
   if(!confirm('Bu mesajı silmek istediğinize emin misiniz?')) return;
   setData('messages',getData('messages').filter(m=>m.id!==id)); renderMessages();
 }
+
+// ── SITE CONTENT MANAGEMENT ──
+const DEFAULT_SERVICES = [
+  ['Kurumsal Web Tasarımı','Markaya özel, hızlı ve mobil uyumlu web siteleri. İlk izlenim her şeydir.'],
+  ['Yazılım Geliştirme','CRM, randevu sistemi, teklif paneli, otomasyon. İşletmene özel çözümler.'],
+  ['E-Ticaret Kurulumu','Online satış altyapısı, ödeme sistemi ve pazaryeri entegrasyonları.'],
+  ['Mobil Uygulama','Markanıza özel iOS ve Android uygulama geliştirme projeleri.'],
+  ['Sosyal Medya Yönetimi','İçerik planı, post tasarımı, reels fikirleri, marka dili ve hesap yönetimi.'],
+  ['Dijital Pazarlama','Google Ads, Meta Ads, reklam stratejisi. Satış ve lead odaklı büyüme.'],
+  ['SEO Yönetimi','Teknik SEO, içerik stratejisi ve anahtar kelime çalışmalarıyla organik büyüme.'],
+  ['Entegrasyonlar','Pazaryeri, muhasebe, XML, kargo, ödeme sistemi ve e-arşiv bağlantıları.']
+];
+
+const DEFAULT_PROCESS = [
+  ['Keşif & Analiz','Marka, hedef kitle ve rekabet analizi yapıyoruz. Dijital ihtiyaçları belirliyoruz.'],
+  ['Strateji','Markaya özel dijital büyüme planı oluşturuyoruz. Hedefler ve yol haritası belirleniyor.'],
+  ['Uygulama','Tasarım, geliştirme ve yayına alma süreçlerini hızlı ve kaliteli şekilde tamamlıyoruz.'],
+  ['Büyüme','Sürekli optimizasyon, raporlama ve iyileştirmelerle ölçülebilir büyüme sağlıyoruz.']
+];
+
+const DEFAULT_WHY = [
+  ['Tek Çatı Avantajı','Web sitesi, sosyal medya, reklam, SEO ve yazılımı aynı anda yönetiyoruz.'],
+  ['Sonuç Odaklı','Her proje satış, büyüme veya görünürlük hedefiyle başlar. Performans önce.'],
+  ['Modern Teknoloji','Güncel altyapılar, hızlı web siteleri ve ölçeklenebilir sistemler kuruyoruz.'],
+  ['Şeffaf İletişim','Raporlar, toplantılar ve net süreçlerle her adımda yanınızdayız.']
+];
+
+function initContentPage() {
+  // Build services fields
+  const sf = document.getElementById('servicesFields');
+  if(sf && !sf.innerHTML.trim()) {
+    const saved = getContentData('services') || DEFAULT_SERVICES;
+    sf.innerHTML = saved.map((s,i)=>`
+      <div class="content-field">
+        <div class="field-label">Hizmet ${i+1}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <input class="field-input" id="sv_name_${i}" value="${s[0]}" placeholder="Hizmet adı">
+          <textarea class="field-textarea" id="sv_desc_${i}" style="min-height:50px">${s[1]}</textarea>
+        </div>
+        <div></div>
+      </div>`).join('');
+  }
+
+  // Build process fields
+  const pf = document.getElementById('processFields');
+  if(pf && !pf.innerHTML.trim()) {
+    const saved = getContentData('process') || DEFAULT_PROCESS;
+    pf.innerHTML = saved.map((s,i)=>`
+      <div class="content-field">
+        <div class="field-label">Adım ${i+1}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <input class="field-input" id="pr_name_${i}" value="${s[0]}" placeholder="Adım başlığı">
+          <textarea class="field-textarea" id="pr_desc_${i}" style="min-height:50px">${s[1]}</textarea>
+        </div>
+        <div></div>
+      </div>`).join('');
+  }
+
+  // Build why fields
+  const wf = document.getElementById('whyFields');
+  if(wf && !wf.innerHTML.trim()) {
+    const saved = getContentData('why') || DEFAULT_WHY;
+    wf.innerHTML = saved.map((s,i)=>`
+      <div class="content-field">
+        <div class="field-label">Madde ${i+1}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <input class="field-input" id="wy_name_${i}" value="${s[0]}" placeholder="Başlık">
+          <textarea class="field-textarea" id="wy_desc_${i}" style="min-height:50px">${s[1]}</textarea>
+        </div>
+        <div></div>
+      </div>`).join('');
+  }
+
+  // Load saved values
+  loadContentValues();
+}
+
+function getContentData(key) {
+  try { return JSON.parse(localStorage.getItem('zoa_content_'+key)); } catch { return null; }
+}
+function setContentData(key, val) {
+  localStorage.setItem('zoa_content_'+key, JSON.stringify(val));
+}
+
+function loadContentValues() {
+  const fields = ['heroEye','h1_1','h1_2','h1_3','heroDesc','cta1','cta2',
+    'aboutTag','aboutT1','aboutT2','aboutP1','aboutP2','stat1','stat1l','stat2','stat2l',
+    'ctaEye','ctaH1','ctaH2','ctaH3','ctaBtn','ctaEmail','ctaInsta',
+    'logoText','ogUrl','siteTitle','metaDesc'];
+  fields.forEach(f => {
+    const saved = localStorage.getItem('zoa_cf_'+f);
+    const el = document.getElementById('cf_'+f);
+    if(saved && el) el.value = saved;
+  });
+}
+
+function saveContent() {
+  // Save simple fields
+  const fields = ['heroEye','h1_1','h1_2','h1_3','heroDesc','cta1','cta2',
+    'aboutTag','aboutT1','aboutT2','aboutP1','aboutP2','stat1','stat1l','stat2','stat2l',
+    'ctaEye','ctaH1','ctaH2','ctaH3','ctaBtn','ctaEmail','ctaInsta',
+    'logoText','ogUrl','siteTitle','metaDesc'];
+  fields.forEach(f => {
+    const el = document.getElementById('cf_'+f);
+    if(el) localStorage.setItem('zoa_cf_'+f, el.value);
+  });
+
+  // Save services
+  const services = DEFAULT_SERVICES.map((_,i) => [
+    document.getElementById('sv_name_'+i)?.value || '',
+    document.getElementById('sv_desc_'+i)?.value || ''
+  ]);
+  setContentData('services', services);
+
+  // Save process
+  const process = DEFAULT_PROCESS.map((_,i) => [
+    document.getElementById('pr_name_'+i)?.value || '',
+    document.getElementById('pr_desc_'+i)?.value || ''
+  ]);
+  setContentData('process', process);
+
+  // Save why
+  const why = DEFAULT_WHY.map((_,i) => [
+    document.getElementById('wy_name_'+i)?.value || '',
+    document.getElementById('wy_desc_'+i)?.value || ''
+  ]);
+  setContentData('why', why);
+
+  // Show success
+  const s = document.getElementById('saveSuccess');
+  s.style.display = 'block';
+  setTimeout(()=>s.style.display='none', 3000);
+
+  // Generate export
+  generateExport();
+}
+
+function previewImg(input, previewId, urlId) {
+  const file = input.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById(previewId);
+    img.src = e.target.result;
+    img.style.display = 'block';
+    document.getElementById(urlId).value = 'Yerel dosya (base64)';
+  };
+  reader.readAsDataURL(file);
+}
+
+function generateExport() {
+  // Build a summary of changes to copy into index.html
+  const summary = {
+    hero: {
+      eyebrow: document.getElementById('cf_heroEye')?.value,
+      h1: [document.getElementById('cf_h1_1')?.value, document.getElementById('cf_h1_2')?.value, document.getElementById('cf_h1_3')?.value],
+      desc: document.getElementById('cf_heroDesc')?.value,
+      cta1: document.getElementById('cf_cta1')?.value,
+      cta2: document.getElementById('cf_cta2')?.value,
+    },
+    email: document.getElementById('cf_ctaEmail')?.value,
+    instagram: document.getElementById('cf_ctaInsta')?.value,
+    siteTitle: document.getElementById('cf_siteTitle')?.value,
+  };
+  localStorage.setItem('zoa_content_export', JSON.stringify(summary, null, 2));
+}
+
+// Hook into goPage to init content page
+const _origGoPage = goPage;
+// Override init for content page
+const _origInitPanel = initPanel;
+
 </script>
 </body>
 </html>
