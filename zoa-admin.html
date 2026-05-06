@@ -343,6 +343,9 @@ tr:hover td{background:rgba(245,244,240,0.02)}
     <div class="nav-item" onclick="goPage('content',this)">
       <span class="nav-icon">✦</span> Site İçeriği
     </div>
+    <div class="nav-item" onclick="goPage('analytics',this)">
+      <span class="nav-icon">◈</span> Analytics
+    </div>
     <div class="sidebar-bottom">
       <button class="logout-btn" onclick="doLogout()">⏻ &nbsp;Çıkış Yap</button>
     </div>
@@ -652,6 +655,94 @@ tr:hover td{background:rgba(245,244,240,0.02)}
         <div style="height:80px"></div>
       </div>
 
+      <!-- ANALYTICS -->
+      <div class="page" id="page-analytics">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
+          <div class="stat-card">
+            <div class="stat-label">Bugünkü Ziyaretçi</div>
+            <div class="stat-num" id="gaToday">—</div>
+            <div class="stat-sub">Google Analytics</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Bu Ay</div>
+            <div class="stat-num" id="gaMonth">—</div>
+            <div class="stat-sub">Toplam oturum</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Ölçüm ID</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.05em">G-3REDXMJQGK</div>
+            <div class="stat-sub">Aktif ✓</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Durum</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.05em;color:#4ade80">AKTİF</div>
+            <div class="stat-sub">Veri toplanıyor</div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <div class="section-label">Analytics Raporları</div>
+          <a href="https://analytics.google.com" target="_blank" class="btn btn-white">Google Analytics'i Aç ↗</a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
+          <div class="table-wrap" style="padding:28px">
+            <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-bottom:16px">Hızlı Erişim</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <a href="https://analytics.google.com/analytics/web/#/p14824998917/reports/intelligenthome" target="_blank" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);text-decoration:none;color:var(--white);transition:background 0.2s" onmouseover="this.style.background='rgba(245,244,240,0.03)'" onmouseout="this.style.background='none'">
+                <span style="font-size:16px">📊</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">Genel Bakış</div>
+                  <div style="font-size:11px;color:var(--gray)">Tüm raporlar</div>
+                </div>
+              </a>
+              <a href="https://analytics.google.com/analytics/web/#/p14824998917/reports/explorer?params=_u..nav%3Dmaui%26_r.explorerCard..selmet%3D%5B%22sessions%22%5D" target="_blank" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);text-decoration:none;color:var(--white);transition:background 0.2s" onmouseover="this.style.background='rgba(245,244,240,0.03)'" onmouseout="this.style.background='none'">
+                <span style="font-size:16px">👥</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">Ziyaretçiler</div>
+                  <div style="font-size:11px;color:var(--gray)">Oturum & kullanıcı</div>
+                </div>
+              </a>
+              <a href="https://analytics.google.com/analytics/web/#/p14824998917/reports/explorer?params=_u..nav%3Dmaui" target="_blank" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);text-decoration:none;color:var(--white);transition:background 0.2s" onmouseover="this.style.background='rgba(245,244,240,0.03)'" onmouseout="this.style.background='none'">
+                <span style="font-size:16px">🌍</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">Coğrafi Konum</div>
+                  <div style="font-size:11px;color:var(--gray)">Hangi şehir/ülke</div>
+                </div>
+              </a>
+              <a href="https://analytics.google.com/analytics/web/#/p14824998917/reports/lifecycle-traffic-acquisition-overview" target="_blank" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);text-decoration:none;color:var(--white);transition:background 0.2s" onmouseover="this.style.background='rgba(245,244,240,0.03)'" onmouseout="this.style.background='none'">
+                <span style="font-size:16px">🔗</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">Trafik Kaynağı</div>
+                  <div style="font-size:11px;color:var(--gray)">Instagram, Google vb.</div>
+                </div>
+              </a>
+              <a href="https://analytics.google.com/analytics/web/#/p14824998917/reports/lifecycle-engagement-pages-and-screens" target="_blank" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);text-decoration:none;color:var(--white);transition:background 0.2s" onmouseover="this.style.background='rgba(245,244,240,0.03)'" onmouseout="this.style.background='none'">
+                <span style="font-size:16px">📱</span>
+                <div>
+                  <div style="font-size:13px;font-weight:500">Cihaz Türü</div>
+                  <div style="font-size:11px;color:var(--gray)">Mobil / Masaüstü</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="table-wrap" style="padding:28px">
+            <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-bottom:16px">Kurulum Bilgisi</div>
+            <div style="font-size:13px;line-height:1.8;color:rgba(245,244,240,0.7)">
+              <div style="margin-bottom:12px">✅ <strong>Analytics kodu siteye eklendi</strong></div>
+              <div style="margin-bottom:12px">✅ <strong>Ölçüm ID:</strong> G-3REDXMJQGK</div>
+              <div style="margin-bottom:12px">✅ <strong>Mülk ID:</strong> 14824998917</div>
+              <div style="margin-bottom:12px">⏳ İlk veriler <strong>24-48 saat</strong> içinde görünür</div>
+              <div style="margin-bottom:20px">📊 Detaylı raporlar için Google Analytics'i ziyaret et</div>
+              <div style="padding:16px;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);font-size:12px;color:#4ade80">
+                Geliştirilmiş ölçüm aktif — sayfa görüntüleme, kaydırma ve tıklamalar otomatik takip ediliyor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- MESSAGES -->
       <div class="page" id="page-messages">
         <div class="section-header">
@@ -903,7 +994,7 @@ function initPanel() {
 // ═══════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════
-const pageTitles = {dashboard:'Dashboard',leads:'Lead Takibi',quotes:'Teklif Yönetimi',blog:'Blog / İçerik',messages:'Mesajlar',content:'Site İçeriği'};
+const pageTitles = {dashboard:'Dashboard',leads:'Lead Takibi',quotes:'Teklif Yönetimi',blog:'Blog / İçerik',messages:'Mesajlar',content:'Site İçeriği',analytics:'Google Analytics'};
 function goPage(id, el) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
