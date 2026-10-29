@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
 <head>
@@ -58,8 +59,8 @@
   }
 }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3REDXMJQGK"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3REDXMJQGK');</script>
+
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#040404;--bg2:#0a0a0a;--bg3:#111;--white:#f5f4f0;--gray:#c0c0c0;--dim:#222;--border:rgba(245,244,240,0.07);--neon:#f5f4f0;}
@@ -255,6 +256,133 @@ footer{padding:56px 60px 40px;border-top:1px solid var(--border);}
   .ft-bot{flex-direction:column;gap:16px;text-align:center;}
 }
 </style>
+
+<style id="zoa-simple">
+/* ── Simpler hero layout ── */
+.hero {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 120px 7vw 80px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+/* Hide grid overlay for cleaner look */
+.h-grid { display: none !important; }
+.h-glow { display: none !important; }
+
+/* Clean eyebrow */
+.h-eye {
+  font-size: 11px !important;
+  letter-spacing: .32em !important;
+  color: rgba(245,244,240,0.35) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 28px !important;
+  opacity: 0;
+  animation: fadeUp .8s .2s both !important;
+}
+
+/* Big clean headline */
+.h-h1 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  font-size: clamp(72px, 10vw, 160px) !important;
+  line-height: .88 !important;
+  letter-spacing: -.01em !important;
+  text-transform: uppercase !important;
+  max-width: 750px !important;
+  opacity: 0;
+  animation: fadeUp .9s .35s both !important;
+}
+.h-h1 .nw { color: #f5f4f0 !important; }
+.h-h1 .g  { color: rgba(245,244,240,0.22) !important; }
+
+/* Bottom row */
+.h-bot {
+  margin-top: 48px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  opacity: 0;
+  animation: fadeUp .9s .55s both !important;
+  max-width: 900px !important;
+}
+.h-desc {
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+  color: rgba(245,244,240,0.38) !important;
+  max-width: 380px !important;
+}
+.h-desc strong { color: rgba(245,244,240,0.65) !important; font-weight:400 !important; }
+
+/* Buttons */
+.btn-f {
+  background: #f5f4f0 !important;
+  color: #040404 !important;
+  font-size: 11px !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  padding: 15px 36px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  border: none !important;
+  transition: opacity .2s !important;
+}
+.btn-f:hover { opacity: .8 !important; }
+.btn-l {
+  font-size: 11px !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  color: rgba(245,244,240,0.4) !important;
+  text-decoration: none !important;
+  padding: 15px 0 !important;
+  border-bottom: 1px solid rgba(245,244,240,0.15) !important;
+  transition: color .2s !important;
+}
+.btn-l:hover { color: rgba(245,244,240,0.8) !important; }
+.h-btns { display: flex !important; gap: 24px !important; align-items: center !important; }
+
+/* Scroll indicator */
+.h-scroll {
+  position: absolute !important;
+  bottom: 36px !important;
+  right: 7vw !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  opacity: .3 !important;
+  z-index: 10 !important;
+}
+.sbar {
+  width: 1px !important;
+  height: 52px !important;
+  background: linear-gradient(to bottom, rgba(245,244,240,0.8), transparent) !important;
+  animation: sbarDown 1.8s 1s infinite !important;
+}
+@keyframes sbarDown {
+  0%   { transform: scaleY(0); transform-origin: top; opacity:1; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity:0; }
+}
+.h-scroll span { font-size: 9px !important; letter-spacing: .24em !important; color: rgba(245,244,240,0.4) !important; }
+
+/* starCanvas off */
+#starCanvas { opacity: 0.25 !important; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(24px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+@media(max-width:768px){
+  .h-h1 { font-size: clamp(60px,15vw,100px) !important; }
+  .h-bot { flex-direction: column !important; align-items: flex-start !important; gap: 28px !important; }
+}
+</style>
+
 </head>
 <body>
 
@@ -286,6 +414,7 @@ footer{padding:56px 60px 40px;border-top:1px solid var(--border);}
 </nav>
 
 <section class="hero">
+  <canvas id="pSphere" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
   <div class="h-grid"></div>
   <div class="h-glow"></div>
   <canvas id="starCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.88;will-change:contents"></canvas>
@@ -623,5 +752,96 @@ function setLang(l){
 })();
 
 </script>
+
+<script>
+(function(){
+  var cv = document.getElementById('pSphere');
+  if(!cv) return;
+  var ctx = cv.getContext('2d');
+  var W, H, cx, cy, R;
+
+  function resize(){
+    var hero = cv.parentElement;
+    W = cv.width  = hero.offsetWidth  || window.innerWidth;
+    H = cv.height = hero.offsetHeight || window.innerHeight;
+    cx = W * 0.72;   /* place sphere right-center */
+    cy = H * 0.50;
+    R  = Math.min(W, H) * 0.28;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  /* Build particles on sphere surface */
+  var N = 1800;
+  var pts = [];
+  for(var i = 0; i < N; i++){
+    /* Fibonacci sphere distribution */
+    var theta = Math.acos(1 - 2*(i+0.5)/N);
+    var phi   = Math.PI * (1 + Math.sqrt(5)) * i;
+    pts.push({
+      ox: Math.sin(theta)*Math.cos(phi),
+      oy: Math.cos(theta),
+      oz: Math.sin(theta)*Math.sin(phi),
+      s:  Math.random()*1.6 + 0.4   /* size */
+    });
+  }
+
+  var t = 0;
+  var mx = 0, my = 0, tmx = 0, tmy = 0;
+  document.addEventListener('mousemove', function(e){
+    tmx = (e.clientX/window.innerWidth  - 0.5) * 0.6;
+    tmy = (e.clientY/window.innerHeight - 0.5) * 0.4;
+  });
+
+  var inView = true;
+  var hero = cv.parentElement;
+  new IntersectionObserver(function(e){ inView = e[0].isIntersecting; }).observe(hero);
+
+  function rotY(p, a){ var c=Math.cos(a),s=Math.sin(a);
+    return {x:p.x*c+p.z*s, y:p.y, z:-p.x*s+p.z*c}; }
+  function rotX(p, a){ var c=Math.cos(a),s=Math.sin(a);
+    return {x:p.x, y:p.y*c-p.z*s, z:p.y*s+p.z*c}; }
+
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!inView) return;
+    t += 0.006;
+    mx += (tmx - mx)*0.04;
+    my += (tmy - my)*0.04;
+
+    ctx.clearRect(0, 0, W, H);
+
+    pts.forEach(function(p){
+      var q = {x:p.ox, y:p.oy, z:p.oz};
+      q = rotX(q, t*0.38 + my);
+      q = rotY(q, t*0.55 + mx);
+
+      /* project */
+      var fov = 2.8;
+      var z = q.z + fov;
+      var px = cx + q.x * R / z * fov;
+      var py = cy + q.y * R / z * fov;
+
+      /* depth shading — back dark, front bright */
+      var depth = (q.z + 1) / 2;   /* 0..1 */
+      var alpha = depth * 0.75 + 0.04;
+      var sz = p.s * (0.4 + depth * 0.8);
+
+      /* rim glow: brighter near edge */
+      var rim = Math.sqrt(p.ox*p.ox + p.oz*p.oz); /* distance from Y axis */
+      alpha = Math.min(1, alpha + rim * 0.25);
+
+      ctx.beginPath();
+      ctx.arc(px, py, sz, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(245,244,240,' + alpha.toFixed(2) + ')';
+      ctx.fill();
+    });
+  }
+  frame();
+})();
+</script>
+
 </body>
 </html>
+
+</body></html>
