@@ -128,7 +128,7 @@ nav.sc{background:rgba(4,4,4,0.92);backdrop-filter:blur(24px);border-color:var(-
 
 /* TICKER */
 .ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;white-space:nowrap;}
-.t-track{display:inline-flex;animation:tick 80s linear infinite;}
+.t-track{display:inline-flex;animation:tick 160s linear infinite;}
 .t-item{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.22em;color:var(--neon);padding:0 36px;text-shadow:none;opacity:.65;}
 .t-item::before{content:'✦';margin-right:36px;opacity:.35;}
 @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -435,14 +435,11 @@ footer{padding:56px 60px 40px;border-top:1px solid var(--border);}
     </div>
   </div>
   <div class="h-scroll"><div class="sbar"></div><span>Scroll</span></div>
+  <div style="position:absolute;left:60px;bottom:40px;z-index:2;opacity:0;animation:up .9s 1.4s forwards;">
+    <img src="/_blob/b177a8788afe4575e1dcde3b0f19febc" alt="Google Partner" style="height:52px;width:auto;opacity:0.85;">
+  </div>
 </section>
 
-<div class="ticker"><div class="t-track" id="ttrack"></div></div>
-
-<div class="pos-ban rv">
-  <div class="pos-t" id="posT">İşletmenizin operasyonuna uygun<br><span class="nw">dijital sistemler geliştiriyoruz.</span></div>
-  <div class="pos-s" id="posS">Reklam, içerik ve web altyapılarını tek sistemde birleştiriyoruz. Tek noktadan yönetim, maksimum dönüşüm.</div>
-</div>
 
 <section>
   <div class="ab-wrap">
@@ -453,11 +450,6 @@ footer{padding:56px 60px 40px;border-top:1px solid var(--border);}
       <p class="ab-txt" id="aboutP2">Farklı kişilerle uğraşmak yerine, <strong>web sitesi, yazılım, e-ticaret, sosyal medya, reklam ve SEO</strong> süreçlerini tek çatı altında yönetiyoruz.</p>
     </div>
     <div class="rv d2">
-      <div class="ab-card">
-        <div class="st"><div class="st-n">8+</div><div class="st-l" id="stL1">Hizmet Alanı</div></div>
-        <div class="st"><div class="st-n" id="statN2">ONE</div><div class="st-l" id="stat2">Çatı Altında Tam Dijital Çözüm</div></div>
-        <div class="st"><div class="st-n">∞</div><div class="st-l" id="stat3">Ölçülebilir Büyüme</div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -535,7 +527,7 @@ footer{padding:56px 60px 40px;border-top:1px solid var(--border);}
   <div class="cta-h rv" id="ctaH">Büyümeye<br><span class="g">Hazır</span><br>Mısın?</div>
   <div class="cta-btns rv">
     <a href="mailto:zoacollectioncompany@gmail.com" class="btn-f" id="ctaBtn1">İletişime Geç</a>
-    <a href="https://instagram.com/zoaxagency" class="btn-l" id="ctaBtn2" target="_blank">@zoaxagency →</a>
+    <a href="https://instagram.com/zoaxagency" class="btn-l" id="ctaBtn2" target="_blank" style="display:inline-flex;align-items:center;gap:8px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@zoaxagency →</a>
   </div>
 </section>
 
