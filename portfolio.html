@@ -191,7 +191,7 @@ footer a:hover{color:var(--white);}
   <div class="stag reveal" data-i="eye">Selected Work</div>
   <h1 class="p-title reveal d1" data-h="title">Port<span class="g">folio</span></h1>
   <div class="p-row reveal d2">
-    <p class="p-desc" data-i="desc">Real projects we have built, grouped by service. The previews load from the live sites.</p>
+    <p class="p-desc" data-i="desc">Real projects we have built, grouped by service. Click a card to visit the live site.</p>
     <a href="index.html#services" class="p-back" data-i="back">← All services</a>
   </div>
 </header>
@@ -283,8 +283,8 @@ var PROJECTS=[
    d:{
     'web':{tr:'Chiang Mai Old City\'deki underground techno kulübü için siyah-kırmızı gece hayatı kimliğinde site. Upcoming, House Rules ve Location olmak üzere üç net bölüm; rezervasyonlar Instagram\'a yönlenir.',
            en:'A black-and-red nightlife website for an underground techno club in Chiang Mai\'s Old City. Three clear sections, Upcoming, House Rules and Location, with reservations routed to Instagram.'},
-    'seo':{tr:'Google Search Console doğrulaması ve sitemap gönderimiyle site Google sonuçlarında listeleniyor; arama sonuçları için özel favicon.',
-           en:'Verified in Google Search Console with a submitted sitemap, so the club now appears in Google results with its own favicon.'}
+    'seo':{tr:'Google Search Console doğrulaması ve sitemap gönderimiyle site Google sonuçlarında listeleniyor.',
+           en:'Verified in Google Search Console with a submitted sitemap, so the club now appears in Google results.'}
    }},
   {id:'sunrent', name:'Sun Rent', url:'https://sunrentcnx.com/', host:'sunrentcnx.com', frame:false,
    img:{full:'assets/portfolio/sunrent-mockup.webp'},
@@ -292,17 +292,15 @@ var PROJECTS=[
    loc:{tr:'Chiang Mai, Tayland · Scooter kiralama',en:'Chiang Mai, Thailand · Scooter rental'},
    cats:['web'],
    d:{
-    'web':{tr:'Eski GoDaddy sitesinin yerine kurulan bilgi sitesi. Scooter seçenekleri ve fiyatlar, bilinmesi gerekenler, galeri ve her şube için ayrı Google Haritalar konumu tek sayfada; tek dokunuşla arama butonu.',
-           en:'An information site replacing the old GoDaddy page: scooter options and prices, good-to-know info, a gallery and a Google Maps location for every shop on one page, with a one-tap call button.'}
+    'web':{tr:'Eski GoDaddy sitesinin yerine kurulan bilgi sitesi. Scooter seçenekleri ve fiyatlar, bilinmesi gerekenler, galeri ve Google Haritalar konumu tek sayfada; tek dokunuşla arama ve WhatsApp butonları.',
+           en:'An information site replacing the old GoDaddy page: scooter options and prices, good-to-know info, a gallery and a Google Maps location on one page, with one-tap call and WhatsApp buttons.'}
    }},
   {id:'dim', name:'DIM Interiors', url:'https://dimmob.com/', host:'dimmob.com', frame:false,
    img:{full:'assets/portfolio/dimmob-mockup.webp'},
    c:['#f2e9d8','#2c2013'],
    loc:{tr:'Ankara · Özel üretim mobilya ve iç mekân uygulama',en:'Ankara · Bespoke joinery and fit-out'},
-   cats:['web','sosyal-medya','dijital-pazarlama'],
+   cats:['sosyal-medya','dijital-pazarlama'],
    d:{
-    'web':{tr:'1966\'dan beri yangına dayanıklı ahşap kapı, mutfak, gardırop ve komple iç mekân uygulaması yapan üç kuşaklık atölye için koyu ahşap ve altın tonlarında premium site. Ankara\'dan Doha, Dubai, Lyon ve Malta\'ya uzanan projeleri öne çıkarır.',
-           en:'A premium dark-wood and gold website for a three-generation atelier making fire-rated wooden doors, kitchens, wardrobes and full interior fit-outs since 1966, showcasing projects from Ankara to Doha, Dubai, Lyon and Malta.'},
     'sosyal-medya':{tr:'1966\'dan beri özel üretim mobilya, kapı ve iç mekân uygulaması yapan firmanın @dim_interiors Instagram hesabı için büyüme çalışması.',
            en:'Instagram growth work for @dim_interiors, a bespoke joinery, doors and interior fit-out firm operating since 1966.'},
     'dijital-pazarlama':{tr:'@dim_interiors için organik içeriği destekleyen Meta reklam stratejisi.',
@@ -312,14 +310,14 @@ var PROJECTS=[
 
 var T={
   tr:{navS:'Hizmetler',navP:'Portföy',navPr:'Süreç',navC:'İletişim',cta:'Teklif Al',eye:'Seçilmiş İşler',
-      title:'Port<span class="g">föy</span>',desc:'Yaptığımız gerçek projeler, hizmete göre gruplu. Önizlemeler canlı sitelerden yüklenir.',
+      title:'Port<span class="g">föy</span>',desc:'Yaptığımız gerçek projeler, hizmete göre gruplu. Kartlara tıklayarak canlı siteleri inceleyebilirsiniz.',
       back:'← Tüm hizmetler',all:'Tümü',allSub:'Hizmet seçerek o alandaki çalışmaları filtreleyin.',
       sub:'Bu hizmet kapsamında yaptığımız çalışmalar.',visit:'Siteyi incele',live:'Canlı',loading:'Önizleme yükleniyor',soon:'Görseller ekleniyor',
       eT:'Bu alandaki çalışmalar yakında burada',eP:'Bu hizmette yürüttüğümüz projeleri hazırlıyoruz. Markanız için neler yapabileceğimizi konuşmak isterseniz bize yazın.',eB:'Teklif Al',
       ctaH:'Sıradaki Proje<br><span class="g">Sizin Olsun</span>',ctaB:'İletişime Geç',copy:'© 2025 ZOA Agency. Tüm hakları saklıdır.',
       open:'yeni sekmede açılır'},
   en:{navS:'Services',navP:'Portfolio',navPr:'Process',navC:'Contact',cta:'Get a Quote',eye:'Selected Work',
-      title:'Port<span class="g">folio</span>',desc:'Real projects we have built, grouped by service. The previews load from the live sites.',
+      title:'Port<span class="g">folio</span>',desc:'Real projects we have built, grouped by service. Click a card to visit the live site.',
       back:'← All services',all:'All',allSub:'Pick a service to filter the work in that area.',
       sub:'Work we have delivered under this service.',visit:'View site',live:'Live',loading:'Loading preview',soon:'Visuals coming',
       eT:'Work in this area is coming soon',eP:'We are preparing the projects we have run under this service. If you would like to talk about what we can do for your brand, get in touch.',eB:'Get a Quote',
