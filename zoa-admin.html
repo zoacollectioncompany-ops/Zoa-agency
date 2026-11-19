@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/favicon-192x192.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
 <title>ZOA Admin Panel</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -67,6 +72,8 @@ html,body{height:100%;background:var(--bg);color:var(--white);font-family:'DM Sa
   padding:0 24px 28px;border-bottom:1px solid var(--border);margin-bottom:12px;
 }
 .sidebar-logo .name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.2em}
+.sidebar-logo .name img,.login-logo img{display:block;height:20px;width:auto;margin-bottom:6px}
+.login-logo img{height:28px}
 .sidebar-logo .sub{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray);margin-top:2px}
 .nav-item {
   display:flex;align-items:center;gap:12px;padding:11px 24px;
@@ -304,7 +311,7 @@ tr:hover td{background:rgba(245,244,240,0.02)}
 <!-- LOGIN -->
 <div id="loginPage">
   <div class="login-box">
-    <div class="login-logo">ZOA</div>
+    <div class="login-logo"><img src="assets/zoa-logo.png" alt="ZOA" width="157" height="28"></div>
     <div class="login-sub">Admin Panel</div>
     <div class="login-label">Kullanıcı Adı</div>
     <input class="login-input" type="text" id="loginUser" placeholder="admin" autocomplete="off">
@@ -321,7 +328,7 @@ tr:hover td{background:rgba(245,244,240,0.02)}
   <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-logo">
-      <div class="name">ZOA</div>
+      <div class="name"><img src="assets/zoa-logo.png" alt="ZOA" width="112" height="20"></div>
       <div class="sub">Admin Panel</div>
     </div>
     <div class="nav-item active" onclick="goPage('dashboard',this)">
