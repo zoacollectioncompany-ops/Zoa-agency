@@ -109,6 +109,9 @@ nav.sc{background:rgba(4,4,4,0.92);backdrop-filter:blur(24px);-webkit-backdrop-f
 .pv-m .ph i{font-size:6px;letter-spacing:.18em;}
 .live{position:absolute;top:16px;left:16px;z-index:3;display:flex;align-items:center;gap:7px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(4,4,4,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);padding:6px 10px;border-radius:40px;color:var(--white);}
 .live::before{content:'';width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.18);animation:pulse 2s infinite;}
+.live.concept::before{background:#c0c0c0;box-shadow:none;animation:none;}
+.pc.no-link:hover .pv.full{transform:none;border-color:var(--line);}
+.pc.no-link:hover .pv.full img{transform:none;}
 @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(74,222,128,0);}}
 .pc-body{margin-top:8px;max-width:600px;}
 .pc-cat{font-size:clamp(15px,1.5vw,19px);color:var(--mute);letter-spacing:-.005em;margin-bottom:6px;}
@@ -170,6 +173,10 @@ footer a:hover{color:var(--white);}
   .cta-b{flex-direction:column;gap:22px;}
   .btn-demo{width:100%;max-width:340px;justify-content:center;}
   footer{padding:28px 24px;flex-direction:column;text-align:center;align-items:center;}
+}
+@media(max-width:600px){
+  .pc-meta{flex-direction:column;align-items:flex-start;gap:8px;}
+  .pc-meta .dot{display:none;}
 }
 @media(max-width:480px){
   .nav-logo img{height:16px;}
@@ -275,6 +282,24 @@ var SERVICES=[
    d:   one description per service the project is listed under.
    ───────────────────────────────────────────────────────────── */
 var PROJECTS=[
+  {id:'videostudio', name:'ZOA Video Studio', url:null, concept:true, frame:false,
+   img:{full:'assets/portfolio/zoa-video-studio-mockup.webp'},
+   c:['#0d0b14','#c8f04a'],
+   loc:{tr:'Video editör yazılımı',en:'Video editor software'},
+   cats:['yazilim'],
+   d:{
+    'yazilim':{tr:'Müşterinin ihtiyaçlarına göre kişiye özel hazırlanabilen bir video editör yazılımı örneği. Aktif veya herkese açık bir ürün değil; örnek çalışmadır.',
+               en:'A sample video editor application that can be tailored to each client\'s needs. It is not an active or publicly available product; it is a sample work.'}
+   }},
+  {id:'nextchair', name:'NextChair', url:null, concept:true, frame:false,
+   img:{full:'assets/portfolio/nextchair-mockup.webp'},
+   c:['#0b1220','#ff4d5e'],
+   loc:{tr:'Berber randevu sistemi',en:'Barbershop booking system'},
+   cats:['yazilim'],
+   d:{
+    'yazilim':{tr:'Berberler için hazırladığımız bir randevu sistemi örneği. İşletmenin ihtiyaçlarına göre kişiye özel uyarlanabilecek şekilde tasarlandı. Aktif bir müşteri projesi veya yayında bir ürün değil; örnek çalışmadır.',
+               en:'A booking system sample we designed for barbershops, built to be tailored to each business\'s needs. It is not an active client project or a live product; it is a sample work.'}
+   }},
   {id:'zoa', name:'ZOA Agency', url:'https://zoa-agency.com/', host:'zoa-agency.com', frame:false,
    img:{full:'assets/portfolio/zoa-agency-mockup.webp'},
    c:['#040404','#f5f4f0'],
@@ -331,7 +356,7 @@ var PROJECTS=[
 ];
 
 /* display order */
-var ORDER=['dim','sunrent','atlantis','badaboom','zoa'];
+var ORDER=['dim','sunrent','atlantis','badaboom','nextchair','videostudio','zoa'];
 PROJECTS.sort(function(a,b){return ORDER.indexOf(a.id)-ORDER.indexOf(b.id);});
 
 var T={
@@ -342,7 +367,7 @@ var T={
       eT:'Bu alandaki çalışmalar yakında burada',eP:'Bu hizmette yürüttüğümüz projeleri hazırlıyoruz. Markanız için neler yapabileceğimizi konuşmak isterseniz bize yazın.',eB:'Teklif Al',
       ctaH:'Sıradaki Proje<br><span class="g">Sizin Olsun</span>',dEye:'Ücretsiz Demo',dP:'Çalışmalarımızı beğendiyseniz ücretsiz demo talep edin; markanızı ve hedeflerinizi bize anlatın.',dBtn:'Ücretsiz Demo Al',dMail:'Ya da doğrudan e-posta gönderin:',
       dSub:'Ücretsiz Demo Talebi — ZOA Agency',dBody:'Merhaba ZOA Agency,\n\nÜcretsiz demo talep etmek istiyorum.\n\nMarka / firma adı:\nWeb sitesi veya Instagram:\nİlgilendiğim hizmet:\nKısaca hedefim:\n',copy:'© 2025 ZOA Agency. Tüm hakları saklıdır.',
-      open:'yeni sekmede açılır'},
+      open:'yeni sekmede açılır',concept:'Örnek çalışma',conceptMeta:'Yayında değil'},
   en:{navS:'Services',navP:'Portfolio',navPr:'Process',navC:'Contact',cta:'Get a Quote',eye:'Selected Work',
       title:'Port<span class="g">folio</span>',desc:'Real projects we have built, grouped by service. Click a card to visit the live site.',
       back:'← All services',all:'All',allSub:'Pick a service to filter the work in that area.',
@@ -350,7 +375,7 @@ var T={
       eT:'Work in this area is coming soon',eP:'We are preparing the projects we have run under this service. If you would like to talk about what we can do for your brand, get in touch.',eB:'Get a Quote',
       ctaH:'Your Project<br><span class="g">Could Be Next</span>',dEye:'Free Demo',dP:'Liked what you saw? Request a free demo and tell us about your brand and goals.',dBtn:'Get a Free Demo',dMail:'Or email us directly:',
       dSub:'Free Demo Request — ZOA Agency',dBody:'Hello ZOA Agency,\n\nI would like to request a free demo.\n\nBrand / company name:\nWebsite or Instagram:\nService I am interested in:\nMy goal in short:\n',copy:'© 2025 ZOA Agency. All rights reserved.',
-      open:'opens in a new tab'}
+      open:'opens in a new tab',concept:'Sample work',conceptMeta:'Not live'}
 };
 
 var qs=new URLSearchParams(location.search);
@@ -393,20 +418,20 @@ function card(p,k){
   var tags='';
   if(k==='all'&&p.cats.length>1){tags='<div class="tags">'+p.cats.map(function(c){return '<span>'+esc(svc(c)[lang])+'</span>';}).join('')+'</div>';}
   var pv=(p.img&&p.img.full)
-    ? '<div class="pv full"><img src="'+esc(p.img.full)+'" alt="'+esc(p.name)+' — desktop and mobile" loading="lazy" decoding="async"><span class="live">'+t.live+'</span></div>'
+    ? '<div class="pv full"><img src="'+esc(p.img.full)+'" alt="'+esc(p.name)+' — desktop and mobile" loading="lazy" decoding="async">'+(p.url?'<span class="live">'+t.live+'</span>':'<span class="live concept">'+t.concept+'</span>')+'</div>'
     : '<div class="pv">'+
       '<div class="pv-d">'+((p.frame||p.img)?'<span class="live">'+t.live+'</span>':'')+screen(p,'d')+'</div>'+
       '<div class="pv-m">'+screen(p,'m')+'</div>'+
     '</div>';
-  return '<article class="pc">'+
-    '<a class="pc-link" href="'+esc(p.url)+'" target="_blank" rel="noopener" aria-label="'+esc(p.name)+' — '+t.visit+' ('+t.open+')"></a>'+
+  return '<article class="pc'+(p.url?'':' no-link')+'">'+
+    (p.url?'<a class="pc-link" href="'+esc(p.url)+'" target="_blank" rel="noopener" aria-label="'+esc(p.name)+' — '+t.visit+' ('+t.open+')"></a>':'')+
     pv+
     '<div class="pc-body">'+
       '<div class="pc-cat">'+esc(s[lang])+'</div>'+
       '<h3 class="pc-t">'+esc(p.name)+'</h3>'+
       '<p class="pc-d">'+esc(desc)+'</p>'+
       tags+
-      '<div class="pc-meta"><span>'+esc(p.loc[lang])+'</span><span class="dot"></span><span class="go">'+t.visit+' ↗</span></div>'+
+      '<div class="pc-meta"><span>'+esc(p.loc[lang])+'</span><span class="dot"></span>'+(p.url?'<span class="go">'+t.visit+' ↗</span>':'<span>'+t.conceptMeta+'</span>')+'</div>'+
     '</div>'+
   '</article>';
 }
