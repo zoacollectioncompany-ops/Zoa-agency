@@ -1349,14 +1349,14 @@ requestAnimationFrame(frame);
 </html>
 
 <script id="zoa-portfolio-links">
-/* Services -> Portfolio: each card opens its service filter on portfolio.html */
+/* Services -> Portfolio: every service card opens portfolio.html with "All" selected */
 (function(){
   function lang(){var r=document.getElementById('htmlRoot');return r&&r.lang==='tr'?'tr':'en';}
   function go(cat){location.href='portfolio.html?lang='+lang()+(cat?'#'+cat:'');}
   document.querySelectorAll('.sv-card[data-cat]').forEach(function(c){
     c.setAttribute('aria-label',(c.querySelector('.sv-name')||c).textContent.trim()+' — portfolio');
-    c.addEventListener('click',function(){go(c.getAttribute('data-cat'));});
-    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(c.getAttribute('data-cat'));}});
+    c.addEventListener('click',function(){go('');});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go('');}});
   });
   document.querySelectorAll('a.to-pf').forEach(function(a){
     a.addEventListener('click',function(e){e.preventDefault();go('');});
