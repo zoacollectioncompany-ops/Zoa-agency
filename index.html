@@ -190,6 +190,8 @@ section{padding:120px 60px;}
 .st-l{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-top:6px;}
 
 /* SERVICES */
+.sv-card[data-cat]{cursor:pointer;}
+.sv-card[data-cat]:focus-visible{outline:1px solid var(--white);outline-offset:-1px;}
 .sv-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
 .sv-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-left:1px solid var(--border);}
 .sv-card{padding:36px 32px 48px;position:relative;overflow:hidden;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transition:background .3s;}
@@ -545,6 +547,7 @@ html.js3d body:not(.mm) #cur,html.js3d body:not(.mm) #cur-ring{opacity:0;}
   <a href="#" class="nav-logo">ZOA<small>Agency</small></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Hizmetler</a></li>
+    <li><a href="portfolio.html" class="to-pf">Portföy</a></li>
     <li><a href="#process">Süreç</a></li>
     <li><a href="#why">Neden ZOA</a></li>
     <li><a href="#contact">İletişim</a></li>
@@ -610,14 +613,14 @@ html.js3d body:not(.mm) #cur,html.js3d body:not(.mm) #cur-ring{opacity:0;}
     <a href="#contact" class="btn-l" id="servMore">Teklif Al →</a>
   </div>
   <div class="sv-grid swrap">
-    <div class="sv-card si"><div class="sv-n">01</div><div class="sv-name">Satış Odaklı Web Sistemleri</div><div class="sv-desc">Premium görünen, hızlı çalışan ve lead toplayan modern web altyapıları.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">02</div><div class="sv-name">Yazılım Geliştirme</div><div class="sv-desc">CRM, randevu sistemi, teklif paneli, otomasyon. İşletmene özel çözümler.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">03</div><div class="sv-name">E-Ticaret Kurulumu</div><div class="sv-desc">Online satış altyapısı, ödeme sistemi ve pazaryeri entegrasyonları.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">04</div><div class="sv-name">Mobil Uygulama</div><div class="sv-desc">Markanıza özel iOS ve Android uygulama geliştirme projeleri.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">05</div><div class="sv-name">Sosyal Medya Yönetimi</div><div class="sv-desc">İçerik planı, post tasarımı, reels fikirleri, marka dili ve hesap yönetimi.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">06</div><div class="sv-name">Dijital Pazarlama</div><div class="sv-desc">Google Ads, Meta Ads, reklam stratejisi. Satış ve lead odaklı büyüme.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">07</div><div class="sv-name">SEO Yönetimi</div><div class="sv-desc">Teknik SEO, içerik stratejisi ve anahtar kelime çalışmalarıyla organik büyüme.</div><div class="sv-arr">↗</div></div>
-    <div class="sv-card si"><div class="sv-n">08</div><div class="sv-name">Entegrasyonlar</div><div class="sv-desc">Pazaryeri, muhasebe, XML, kargo, ödeme sistemi ve e-arşiv bağlantıları.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="web" role="link" tabindex="0"><div class="sv-n">01</div><div class="sv-name">Satış Odaklı Web Sistemleri</div><div class="sv-desc">Premium görünen, hızlı çalışan ve lead toplayan modern web altyapıları.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="yazilim" role="link" tabindex="0"><div class="sv-n">02</div><div class="sv-name">Yazılım Geliştirme</div><div class="sv-desc">CRM, randevu sistemi, teklif paneli, otomasyon. İşletmene özel çözümler.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="e-ticaret" role="link" tabindex="0"><div class="sv-n">03</div><div class="sv-name">E-Ticaret Kurulumu</div><div class="sv-desc">Online satış altyapısı, ödeme sistemi ve pazaryeri entegrasyonları.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="mobil" role="link" tabindex="0"><div class="sv-n">04</div><div class="sv-name">Mobil Uygulama</div><div class="sv-desc">Markanıza özel iOS ve Android uygulama geliştirme projeleri.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="sosyal-medya" role="link" tabindex="0"><div class="sv-n">05</div><div class="sv-name">Sosyal Medya Yönetimi</div><div class="sv-desc">İçerik planı, post tasarımı, reels fikirleri, marka dili ve hesap yönetimi.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="dijital-pazarlama" role="link" tabindex="0"><div class="sv-n">06</div><div class="sv-name">Dijital Pazarlama</div><div class="sv-desc">Google Ads, Meta Ads, reklam stratejisi. Satış ve lead odaklı büyüme.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="seo" role="link" tabindex="0"><div class="sv-n">07</div><div class="sv-name">SEO Yönetimi</div><div class="sv-desc">Teknik SEO, içerik stratejisi ve anahtar kelime çalışmalarıyla organik büyüme.</div><div class="sv-arr">↗</div></div>
+    <div class="sv-card si" data-cat="entegrasyon" role="link" tabindex="0"><div class="sv-n">08</div><div class="sv-name">Entegrasyonlar</div><div class="sv-desc">Pazaryeri, muhasebe, XML, kargo, ödeme sistemi ve e-arşiv bağlantıları.</div><div class="sv-arr">↗</div></div>
   </div>
 </section>
 
@@ -689,6 +692,7 @@ html.js3d body:not(.mm) #cur,html.js3d body:not(.mm) #cur-ring{opacity:0;}
       <div class="ft-col-t" id="ftColT1">Hızlı Erişim</div>
       <div class="ft-links" id="footLinks">
         <a href="#services">Hizmetler</a>
+        <a href="portfolio.html" class="to-pf">Portföy</a>
         <a href="#process">Süreç</a>
         <a href="#why">Neden ZOA</a>
         <a href="#contact">İletişim</a>
@@ -756,7 +760,7 @@ html.js3d body:not(.mm) #cur,html.js3d body:not(.mm) #cur-ring{opacity:0;}
     },reduce?0:250);}
   requestAnimationFrame(tick);
   setTimeout(()=>{loaded=true;},6000); // safety
-  addEventListener('load',()=>setLang('en'));
+  addEventListener('load',()=>setLang(new URLSearchParams(location.search).get('lang')==='tr'?'tr':'en'));
 })();
 
 // CURSOR
@@ -794,7 +798,7 @@ document.querySelectorAll('.rv,.swrap').forEach(el=>io.observe(el));
 
 // LANG
 const T={
-  tr:{nav:['Hizmetler','Süreç','Neden ZOA','İletişim'],cta:'Teklif Al',eye:'Markanızın Dijital Operasyon Merkezi',h1:'Markanıza Özel<br><span class="nw">Dijital Sistemler</span><br>Kuruyoruz.',desc:'Web site, reklam, SEO, içerik ve otomasyon süreçlerini tek çatı altında yöneten<br><strong>modern büyüme altyapıları oluşturuyoruz.</strong>',c1:'Teklif Al',c2:'Hizmetleri Gör',aTag:'Hakkımızda',aTitle:'Biz Kimiz?<br><span class="g">Ne Yapıyoruz?</span>',p1:'ZOA Agency, markaların dijital dünyada <strong>profesyonel, güvenilir ve satış odaklı</strong> bir kimlik kazanması için kurulmuş modern bir dijital büyüme ajansıdır.',p2:'Farklı kişilerle uğraşmak yerine, <strong>web sitesi, yazılım, e-ticaret, sosyal medya, reklam ve SEO</strong> süreçlerini tek çatı altında yönetiyoruz.',s2:'Çatı Altında Tam Dijital Çözüm',s3:'Ölçülebilir Büyüme',s1:'Hizmet Alanı',sN2:'TEK',sTag:'Hizmetlerimiz',sTitle:'Tek Çatı Altında<br><span class="g">Her Şey</span>',sMore:'Teklif Al →',sv:['Satış Odaklı Web Sistemleri','Yazılım Geliştirme','E-Ticaret Kurulumu','Mobil Uygulama','Sosyal Medya Yönetimi','Dijital Pazarlama','SEO Yönetimi','Entegrasyonlar'],sd:['Premium görünen, hızlı çalışan ve lead toplayan modern web altyapıları.','CRM, randevu sistemi, teklif paneli, otomasyon. İşletmene özel çözümler.','Online satış altyapısı, ödeme sistemi ve pazaryeri entegrasyonları.','Markanıza özel iOS ve Android uygulama geliştirme projeleri.','İçerik planı, post tasarımı, reels fikirleri, marka dili ve hesap yönetimi.','Google Ads, Meta Ads, reklam stratejisi. Satış ve lead odaklı büyüme.','Teknik SEO, içerik stratejisi ve anahtar kelime çalışmalarıyla organik büyüme.','Pazaryeri, muhasebe, XML, kargo, ödeme sistemi ve e-arşiv bağlantıları.'],pTag:'Çalışma Sürecimiz',pTitle:'Nasıl <span class="g">Çalışıyoruz?</span>',pt:['Keşif & Analiz','Strateji','Uygulama','Büyüme'],pd:['Marka, hedef kitle ve rekabet analizi yapıyoruz.','Markaya özel dijital büyüme planı oluşturuyoruz.','Tasarım, geliştirme ve yayına alma süreçlerini tamamlıyoruz.','Sürekli optimizasyon ve raporlamayla büyüme sağlıyoruz.'],wTag:'Neden ZOA?',wQ:'Çoğu marka neden büyüyemiyor?',ctaE:'Sisteminizi Birlikte Kuralım',ctaH:'Büyümeye<br><span class="g">Hazır</span><br>Mısın?',cb1:'İletişime Geç',cb2:'@zoaxagency →',fc:'© 2025 ZOA Agency. Tüm hakları saklıdır.',
+  tr:{nav:['Hizmetler','Portföy','Süreç','Neden ZOA','İletişim'],cta:'Teklif Al',eye:'Markanızın Dijital Operasyon Merkezi',h1:'Markanıza Özel<br><span class="nw">Dijital Sistemler</span><br>Kuruyoruz.',desc:'Web site, reklam, SEO, içerik ve otomasyon süreçlerini tek çatı altında yöneten<br><strong>modern büyüme altyapıları oluşturuyoruz.</strong>',c1:'Teklif Al',c2:'Hizmetleri Gör',aTag:'Hakkımızda',aTitle:'Biz Kimiz?<br><span class="g">Ne Yapıyoruz?</span>',p1:'ZOA Agency, markaların dijital dünyada <strong>profesyonel, güvenilir ve satış odaklı</strong> bir kimlik kazanması için kurulmuş modern bir dijital büyüme ajansıdır.',p2:'Farklı kişilerle uğraşmak yerine, <strong>web sitesi, yazılım, e-ticaret, sosyal medya, reklam ve SEO</strong> süreçlerini tek çatı altında yönetiyoruz.',s2:'Çatı Altında Tam Dijital Çözüm',s3:'Ölçülebilir Büyüme',s1:'Hizmet Alanı',sN2:'TEK',sTag:'Hizmetlerimiz',sTitle:'Tek Çatı Altında<br><span class="g">Her Şey</span>',sMore:'Teklif Al →',sv:['Satış Odaklı Web Sistemleri','Yazılım Geliştirme','E-Ticaret Kurulumu','Mobil Uygulama','Sosyal Medya Yönetimi','Dijital Pazarlama','SEO Yönetimi','Entegrasyonlar'],sd:['Premium görünen, hızlı çalışan ve lead toplayan modern web altyapıları.','CRM, randevu sistemi, teklif paneli, otomasyon. İşletmene özel çözümler.','Online satış altyapısı, ödeme sistemi ve pazaryeri entegrasyonları.','Markanıza özel iOS ve Android uygulama geliştirme projeleri.','İçerik planı, post tasarımı, reels fikirleri, marka dili ve hesap yönetimi.','Google Ads, Meta Ads, reklam stratejisi. Satış ve lead odaklı büyüme.','Teknik SEO, içerik stratejisi ve anahtar kelime çalışmalarıyla organik büyüme.','Pazaryeri, muhasebe, XML, kargo, ödeme sistemi ve e-arşiv bağlantıları.'],pTag:'Çalışma Sürecimiz',pTitle:'Nasıl <span class="g">Çalışıyoruz?</span>',pt:['Keşif & Analiz','Strateji','Uygulama','Büyüme'],pd:['Marka, hedef kitle ve rekabet analizi yapıyoruz.','Markaya özel dijital büyüme planı oluşturuyoruz.','Tasarım, geliştirme ve yayına alma süreçlerini tamamlıyoruz.','Sürekli optimizasyon ve raporlamayla büyüme sağlıyoruz.'],wTag:'Neden ZOA?',wQ:'Çoğu marka neden büyüyemiyor?',ctaE:'Sisteminizi Birlikte Kuralım',ctaH:'Büyümeye<br><span class="g">Hazır</span><br>Mısın?',cb1:'İletişime Geç',cb2:'@zoaxagency →',fc:'© 2025 ZOA Agency. Tüm hakları saklıdır.',
     posT:'İşletmenizin operasyonuna uygun<br><span class="nw">dijital sistemler geliştiriyoruz.</span>',
     posS:'Reklam, içerik ve web altyapılarını tek sistemde birleştiriyoruz. Tek noktadan yönetim, maksimum dönüşüm.',
     probList:['Web sitesi ayrı kişi','Reklamcı ayrı kişi','Tasarımcı ayrı kişi','SEO başka ekip'],
@@ -805,7 +809,7 @@ const T={
     ftSvs:'Web • Yazılım • Reklam • SEO',ftLoc:'İzmir / Remote Worldwide',
     ftColT1:'Hızlı Erişim',ftColT2:'İletişim',
     ftQuote:'"Let\'s build your growth system."'},
-  en:{nav:['Services','Process','Why ZOA','Contact'],cta:'Get a Quote',eye:"Your Brand\'s Digital Growth Partner",h1:'We create<br><span class="nw">Digital Systems</span><br>for your brand.',desc:'Web, ads, SEO, content and automation — all managed under one roof.<br><strong>We build modern digital growth systems for your brand.</strong>',c1:'Get a Quote',c2:'See Services',aTag:'About Us',aTitle:'Who We Are<br><span class="g">& What We Do</span>',p1:'ZOA Agency is a modern digital growth agency helping brands build a <strong>professional, trustworthy, and sales-focused</strong> digital presence.',p2:'No more juggling different freelancers — we manage your <strong>website, software, e-commerce, social media, ads and SEO</strong> all in one place.',s2:'All Services, One Team',s3:'Measurable Growth',s1:'Service Areas',sN2:'ONE',sTag:'Our Services',sTitle:'Everything<br><span class="g">in One Place</span>',sMore:'Get a Quote →',sv:['Sales-Driven Websites','Custom Software','E-Commerce Setup','Mobile App Development','Social Media Management','Digital Marketing','SEO Management','System Integrations'],sd:['Fast, modern websites built to look premium and generate leads.','CRM, booking systems, quote tools and automation — tailored to your business.','Full online store setup with payment systems and marketplace connections.','Custom iOS and Android apps designed specifically for your brand.','Content planning, post design, reels ideas, brand voice and account management.','Google Ads, Meta Ads and campaign strategy focused on sales and leads.','Technical SEO, content strategy and keyword research for organic growth.','Marketplace, accounting, XML, shipping, payment and e-archive integrations.'],pTag:'Our Process',pTitle:'How We <span class="g">Work</span>',pt:['Discovery & Analysis','Strategy','Build & Launch','Growth'],pd:['We analyze your brand, target audience and competitors to identify digital opportunities.','We craft a custom digital growth plan with clear goals and a roadmap.','We design, develop and launch everything quickly without compromising quality.','We continuously optimize, report and improve to deliver measurable results.'],wTag:'Why ZOA?',wQ:'Why do most brands struggle to grow online?',ctaE:"Let\'s Build Something Together",ctaH:'Ready To<br><span class="g">Grow</span><br>Online?',cb1:'Get in Touch',cb2:'@zoaxagency →',fc:'© 2025 ZOA Agency. All rights reserved.',
+  en:{nav:['Services','Portfolio','Process','Why ZOA','Contact'],cta:'Get a Quote',eye:"Your Brand\'s Digital Growth Partner",h1:'We create<br><span class="nw">Digital Systems</span><br>for your brand.',desc:'Web, ads, SEO, content and automation — all managed under one roof.<br><strong>We build modern digital growth systems for your brand.</strong>',c1:'Get a Quote',c2:'See Services',aTag:'About Us',aTitle:'Who We Are<br><span class="g">& What We Do</span>',p1:'ZOA Agency is a modern digital growth agency helping brands build a <strong>professional, trustworthy, and sales-focused</strong> digital presence.',p2:'No more juggling different freelancers — we manage your <strong>website, software, e-commerce, social media, ads and SEO</strong> all in one place.',s2:'All Services, One Team',s3:'Measurable Growth',s1:'Service Areas',sN2:'ONE',sTag:'Our Services',sTitle:'Everything<br><span class="g">in One Place</span>',sMore:'Get a Quote →',sv:['Sales-Driven Websites','Custom Software','E-Commerce Setup','Mobile App Development','Social Media Management','Digital Marketing','SEO Management','System Integrations'],sd:['Fast, modern websites built to look premium and generate leads.','CRM, booking systems, quote tools and automation — tailored to your business.','Full online store setup with payment systems and marketplace connections.','Custom iOS and Android apps designed specifically for your brand.','Content planning, post design, reels ideas, brand voice and account management.','Google Ads, Meta Ads and campaign strategy focused on sales and leads.','Technical SEO, content strategy and keyword research for organic growth.','Marketplace, accounting, XML, shipping, payment and e-archive integrations.'],pTag:'Our Process',pTitle:'How We <span class="g">Work</span>',pt:['Discovery & Analysis','Strategy','Build & Launch','Growth'],pd:['We analyze your brand, target audience and competitors to identify digital opportunities.','We craft a custom digital growth plan with clear goals and a roadmap.','We design, develop and launch everything quickly without compromising quality.','We continuously optimize, report and improve to deliver measurable results.'],wTag:'Why ZOA?',wQ:'Why do most brands struggle to grow online?',ctaE:"Let\'s Build Something Together",ctaH:'Ready To<br><span class="g">Grow</span><br>Online?',cb1:'Get in Touch',cb2:'@zoaxagency →',fc:'© 2025 ZOA Agency. All rights reserved.',
     posT:'Digital systems built around<br><span class="nw">your business operations.</span>',
     posS:'We bring together your ads, content and web infrastructure into one unified system — less complexity, more results.',
     probList:['Website handled by one person','Ads handled by another','Design by someone else','SEO by a different team'],
@@ -866,7 +870,7 @@ function setLang(l){
   if(_('ftColT2')) _('ftColT2').textContent=t.ftColT2;
   if(_('ftQuote')) _('ftQuote').textContent=t.ftQuote;
   // Footer links
-  const flLinks=[['Hizmetler','Services'],['Süreç','Process'],['Neden ZOA','Why ZOA'],['İletişim','Contact'],['Instagram','Instagram']];
+  const flLinks=[['Hizmetler','Services'],['Portföy','Portfolio'],['Süreç','Process'],['Neden ZOA','Why ZOA'],['İletişim','Contact'],['Instagram','Instagram']];
   document.querySelectorAll('#footLinks a').forEach((a,i)=>{if(flLinks[i]) a.textContent=l==='tr'?flLinks[i][0]:flLinks[i][1];});
 }
 
@@ -1344,4 +1348,19 @@ requestAnimationFrame(frame);
 </body>
 </html>
 
+<script id="zoa-portfolio-links">
+/* Services -> Portfolio: each card opens its service filter on portfolio.html */
+(function(){
+  function lang(){var r=document.getElementById('htmlRoot');return r&&r.lang==='tr'?'tr':'en';}
+  function go(cat){location.href='portfolio.html?lang='+lang()+(cat?'#'+cat:'');}
+  document.querySelectorAll('.sv-card[data-cat]').forEach(function(c){
+    c.setAttribute('aria-label',(c.querySelector('.sv-name')||c).textContent.trim()+' — portfolio');
+    c.addEventListener('click',function(){go(c.getAttribute('data-cat'));});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(c.getAttribute('data-cat'));}});
+  });
+  document.querySelectorAll('a.to-pf').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();go('');});
+  });
+})();
+</script>
 </body></html>
