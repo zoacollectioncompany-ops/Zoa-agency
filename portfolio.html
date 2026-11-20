@@ -251,7 +251,8 @@ footer a:hover{color:var(--white);}
       <a href="https://atlantistadilat.com/">Atlantis Tadilat</a> ·
       <a href="https://www.badaboomcnx.com/">BadaBoom Techno Club</a> ·
       <a href="https://sunrentcnx.com/">Sun Rent</a> ·
-      <a href="https://dimmob.com/">DIM Interiors</a>
+      <a href="https://dimmob.com/">DIM Interiors</a> ·
+      <a href="https://xn--sekizmimarlk-c5b.com/">Sekiz Mimarlık</a>
     </p>
   </noscript>
 </main>
@@ -351,6 +352,15 @@ var SERVICES=[
    d:   one description per service the project is listed under.
    ───────────────────────────────────────────────────────────── */
 var PROJECTS=[
+  {id:'sekiz', name:'Sekiz Mimarlık', url:'https://xn--sekizmimarlk-c5b.com/', host:'sekizmimarlık.com', frame:false,
+   img:{full:'assets/portfolio/sekiz-mockup.webp'},
+   c:['#16110a','#c9a15c'],
+   loc:{tr:'Mimarlık, inşaat ve iç mekân tasarımı',en:'Architecture, construction and interior design'},
+   cats:['web'],
+   d:{
+    'web':{tr:'İnşaat, mimarlık ve iç mekân tasarımı firması için tam ekran fotoğraflı, sade ve premium kurumsal site. Dört proje kategorisi, hizmetler ve yaklaşım bölümleri; arama ve WhatsApp butonlarıyla doğrudan iletişim.',
+           en:'A minimal, premium corporate website with a full-screen photo hero for a construction, architecture and interior design firm. Four project categories, services and approach sections, with direct call and WhatsApp buttons.'}
+   }},
   {id:'videostudio', name:'ZOA Video Studio', url:null, concept:true, frame:false,
    img:{full:'assets/portfolio/zoa-video-studio-mockup.webp'},
    c:['#0d0b14','#c8f04a'],
@@ -425,7 +435,7 @@ var PROJECTS=[
 ];
 
 /* display order */
-var ORDER=['dim','sunrent','nextchair','videostudio','atlantis','badaboom','zoa'];
+var ORDER=['dim','sunrent','nextchair','videostudio','atlantis','badaboom','sekiz','zoa'];
 PROJECTS.sort(function(a,b){return ORDER.indexOf(a.id)-ORDER.indexOf(b.id);});
 
 var T={
