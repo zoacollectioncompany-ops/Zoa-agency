@@ -1,17 +1,17 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style id="zoa-base-reset">:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png?v=2">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/favicon-192x192.png?v=2">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=2">
 <link rel="manifest" href="/site.webmanifest">
-<title>ZOA Agency — Markanıza Özel Dijital Sistemler | İzmir</title>
-<meta name="description" content="Web tasarımı, yazılım, e-ticaret, SEO ve dijital pazarlama hizmetlerini tek çatı altında sunuyoruz. İzmir merkezli, remote çalışan dijital büyüme ajansı.">
-<meta name="keywords" content="dijital ajans, web tasarımı, SEO, dijital pazarlama, e-ticaret, yazılım geliştirme, sosyal medya yönetimi, İzmir ajans, ZOA Agency">
+<title>ZOA Agency — Digital Systems Built for Your Brand | İzmir</title>
+<meta name="description" content="Web design, software, e-commerce, SEO and digital marketing under one roof. A remote-first digital growth agency based in İzmir, Turkey.">
+<meta name="keywords" content="digital agency, web design, SEO, digital marketing, e-commerce, software development, social media management, İzmir agency, ZOA Agency">
 <meta name="author" content="ZOA Agency">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://zoa-agency.com/">
@@ -19,17 +19,18 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zoa-agency.com/">
-<meta property="og:title" content="ZOA Agency — Markanıza Özel Dijital Sistemler">
-<meta property="og:description" content="Web tasarımı, yazılım, e-ticaret, SEO ve dijital pazarlama hizmetlerini tek çatı altında sunuyoruz. İzmir merkezli dijital büyüme ajansı.">
+<meta property="og:title" content="ZOA Agency — Digital Systems Built for Your Brand">
+<meta property="og:description" content="Web design, software, e-commerce, SEO and digital marketing under one roof. A digital growth agency based in İzmir, Turkey.">
 <meta property="og:image" content="https://zoa-agency.com/og-image.jpg">
-<meta property="og:locale" content="tr_TR">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
 <meta property="og:site_name" content="ZOA Agency">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://zoa-agency.com/">
-<meta name="twitter:title" content="ZOA Agency — Markanıza Özel Dijital Sistemler">
-<meta name="twitter:description" content="Web tasarımı, yazılım, e-ticaret, SEO ve dijital pazarlama hizmetlerini tek çatı altında sunuyoruz.">
+<meta name="twitter:title" content="ZOA Agency — Digital Systems Built for Your Brand">
+<meta name="twitter:description" content="Web design, software, e-commerce, SEO and digital marketing under one roof.">
 <meta name="twitter:image" content="https://zoa-agency.com/og-image.jpg">
 
 <!-- Schema Markup -->
@@ -40,7 +41,8 @@
   "name": "ZOA Agency",
   "url": "https://zoa-agency.com",
   "logo": "https://zoa-agency.com/og-image.jpg",
-  "description": "Web tasarımı, yazılım, e-ticaret, SEO ve dijital pazarlama hizmetlerini tek çatı altında sunan İzmir merkezli dijital büyüme ajansı.",
+  "description": "A digital growth agency based in İzmir, Turkey, offering web design, software, e-commerce, SEO and digital marketing under one roof.",
+  "inLanguage": ["en", "tr"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "İzmir",
@@ -51,12 +53,12 @@
     "https://instagram.com/zoaxagency"
   ],
   "serviceType": [
-    "Web Tasarımı",
-    "Yazılım Geliştirme",
-    "E-Ticaret",
+    "Web Design",
+    "Software Development",
+    "E-Commerce",
     "SEO",
-    "Dijital Pazarlama",
-    "Sosyal Medya Yönetimi"
+    "Digital Marketing",
+    "Social Media Management"
   ],
   "areaServed": {
     "@type": "Country",
@@ -1401,9 +1403,6 @@ requestAnimationFrame(frame);
 })();
 </script>
 
-</body>
-</html>
-
 <script id="zoa-hero-demo-js">
 (function(){
   var D={tr:{p:'Portföyü İncele',t:'Ücretsiz Web Sitesi Demosu Al',s:'Ücretsiz Web Sitesi Demosu Talebi — ZOA Agency',b:'Merhaba ZOA Agency,\n\nÜcretsiz web sitesi demosu talep etmek istiyorum.\n\nMarka / firma adı:\nMevcut web sitesi veya Instagram:\nKısaca ihtiyacım:\n'},
@@ -1414,6 +1413,11 @@ requestAnimationFrame(frame);
   var prev=window.setLang;
   if(typeof prev==='function'){window.setLang=function(l){var r=prev.apply(this,arguments);upd(l);return r;};}
   upd((document.getElementById('htmlRoot')||{}).lang||'en');
+  /* page title + description follow the selected language */
+  var M={en:{t:'ZOA Agency — Digital Systems Built for Your Brand | İzmir',d:'Web design, software, e-commerce, SEO and digital marketing under one roof. A remote-first digital growth agency based in İzmir, Turkey.'},
+         tr:{t:'ZOA Agency — Markanıza Özel Dijital Sistemler | İzmir',d:'Web tasarımı, yazılım, e-ticaret, SEO ve dijital pazarlama hizmetlerini tek çatı altında sunuyoruz. İzmir merkezli, remote çalışan dijital büyüme ajansı.'}};
+  var prev2=window.setLang;
+  window.setLang=function(l){var r=prev2.apply(this,arguments);var m=M[l==='tr'?'tr':'en'];document.title=m.t;var md=document.querySelector('meta[name="description"]');if(md)md.setAttribute('content',m.d);return r;};
 })();
 </script>
 <script id="zoa-portfolio-links">
@@ -1431,4 +1435,5 @@ requestAnimationFrame(frame);
   });
 })();
 </script>
-</body></html>
+</body>
+</html>

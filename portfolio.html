@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portföy | ZOA Agency</title>
-<meta name="description" content="ZOA Agency'nin web tasarımı, SEO, sosyal medya ve dijital pazarlama alanlarında yaptığı gerçek projeler.">
+<title>Portfolio | ZOA Agency</title>
+<meta name="description" content="Real projects by ZOA Agency in web design, SEO, social media and digital marketing, plus sample software work.">
 <link rel="canonical" href="https://zoa-agency.com/portfolio.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Portföy | ZOA Agency">
-<meta property="og:description" content="Web tasarımı, SEO, sosyal medya ve dijital pazarlama projelerimiz.">
+<meta property="og:title" content="Portfolio | ZOA Agency">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:description" content="Our web design, SEO, social media and digital marketing projects.">
 <meta property="og:url" content="https://zoa-agency.com/portfolio.html">
 <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
 <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png?v=2">
@@ -559,8 +561,10 @@ function setActive(k,push){
   }
 }
 
+var META={en:{t:'Portfolio | ZOA Agency',d:'Real projects by ZOA Agency in web design, SEO, social media and digital marketing, plus sample software work.'},tr:{t:'Portföy | ZOA Agency',d:'ZOA Agency\'nin web tasarımı, SEO, sosyal medya ve dijital pazarlama alanlarındaki gerçek projeleri ve örnek yazılım çalışmaları.'}};
 window.setLang=function(l){
   lang=l;var t=T[l];
+  document.title=META[l].t;var md=document.querySelector('meta[name="description"]');if(md)md.setAttribute('content',META[l].d);
   $('htmlRoot').lang=l;
   $('btnTR').classList.toggle('on',l==='tr');$('btnEN').classList.toggle('on',l==='en');
   document.querySelectorAll('[data-i]').forEach(function(el){var v=t[el.getAttribute('data-i')];if(v)el.textContent=v;});
